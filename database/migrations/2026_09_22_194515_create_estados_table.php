@@ -11,11 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('noticias', function (Blueprint $table) {
-            $table->integer('idNoticia')->primary();
-            $table->date('fecha');
-            $table->string('titulo', 250);
-            $table->string('descripcion', 2000);
+        Schema::create('estado', function (Blueprint $table) {
+            $table->integer('Id')->autoIncrement()->primary();
+            $table->string('clave', 50);
+            $table->string('nombre', 200);
+            $table->dateTime('date_added');
         });
     }
 
@@ -24,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('noticias');
+        Schema::dropIfExists('estado');
     }
 };

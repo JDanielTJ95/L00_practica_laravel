@@ -11,9 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('responsable_contratistas', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+        Schema::create('etapa', function (Blueprint $table) {
+            $table->integer('Id')->primary();
+            $table->string('clave', 10)->nullable();
+            $table->string('descripcion', 100)->nullable();
+            $table->string('carpeta_fotos', 500)->nullable();
         });
     }
 
@@ -22,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('responsable_contratistas');
+        Schema::dropIfExists('etapa');
     }
 };
